@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 export default {
   nodes (state) {
     return state.list.map(item => {

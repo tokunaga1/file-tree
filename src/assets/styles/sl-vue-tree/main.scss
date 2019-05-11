@@ -1,0 +1,52 @@
+.sl-vue-tree {
+  &.sl-vue-tree-root {
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 300px;
+
+    display: flex;
+
+    > .sl-vue-tree-nodes-list {
+      overflow-x: hidden;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+  }
+  .sl-vue-tree-node-item {
+    .sl-vue-tree-gap {
+      flex-shrink: 0;
+    }
+    .sl-vue-tree-title {
+      display: flex;
+      flex-grow: 1;
+      min-width: 0;
+
+      .sl-vue-tree-toggle {
+        + .item-icon {
+          margin-right: 0;
+        }
+      }
+
+      .item-icon {
+        margin-right: .5rem;
+      }
+      .item-title {
+        flex-grow: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+      }
+    }
+    .sl-vue-tree-sidebar {
+      flex-shrink: 0;
+    }
+  }
+  .sl-vue-tree-drag-info {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 28px;
+  }
+}

@@ -1,0 +1,41 @@
+$blue-gray: #607D8B;
+$blue-gray-light10: lighten($blue-gray, 10%);
+$blue-gray-light20: lighten($blue-gray, 20%);
+$blue-gray-light30: lighten($blue-gray, 30%);
+$blue-gray-light40: lighten($blue-gray, 40%);
+$blue-gray-light50: lighten($blue-gray, 50%);
+
+.sl-vue-tree {
+  &.sl-vue-tree-root {
+    background-color: #ffffff;
+    color: $blue-gray;
+    border: none;
+  }
+
+  .sl-vue-tree-selected {
+    .sl-vue-tree-node-item {
+      background-color: $blue-gray;
+      color: white;
+
+      &:hover,
+      &.sl-vue-tree-cursor-hover {
+        color: white;
+        background-color: $blue-gray-light20;
+      }
+    }
+  }
+
+  .sl-vue-tree-node-item {
+    &:hover,
+    &.sl-vue-tree-cursor-hover {
+      color: $blue-gray;
+      background-color: $blue-gray-light40;
+    }
+  }
+
+  .sl-vue-tree-drag-info {
+    opacity: .5;
+    color: white;
+    background-color: $blue-gray;
+  }
+}

@@ -1,10 +1,14 @@
 <template>
   <div id="app">
-    <FileTree />
+    <FileTree
+      v-model="json"
+      ref="svt"
+    />
   </div>
 </template>
 
 <script>
+  import { mapState, mapGetters } from 'vuex'
   import HelloWorld from './components/HelloWorld.vue'
   import FileTree from './components/FileTree/index.vue'
 
@@ -13,6 +17,14 @@
     components: {
       HelloWorld,
       FileTree,
+    },
+    computed: {
+      ...mapGetters('posts', [
+        'json'
+      ]),
+    },
+    created () {
+      this.$store.dispatch('posts/get_list');
     }
   }
 </script>
