@@ -149,6 +149,7 @@
 <style lang="scss">
   @import '~@fortawesome/fontawesome-svg-core/styles.css';
   @import '~sl-vue-tree/dist/sl-vue-tree-dark.css';
+
   @import '../../assets/styles/sl-vue-tree/main.scss';
   @import '../../assets/styles/sl-vue-tree/light.scss';
 </style>

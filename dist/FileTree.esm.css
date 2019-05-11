@@ -1,0 +1,70 @@
+@import '~@fortawesome/fontawesome-svg-core/styles.css';
+@import '~sl-vue-tree/dist/sl-vue-tree-dark.css';
+.sl-vue-tree.sl-vue-tree-root {
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 300px;
+  display: flex;
+}
+.sl-vue-tree.sl-vue-tree-root > .sl-vue-tree-nodes-list {
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-gap {
+  flex-shrink: 0;
+}
+.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-title {
+  display: flex;
+  flex-grow: 1;
+  min-width: 0;
+}
+.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-title .sl-vue-tree-toggle + .item-icon {
+  margin-right: 0;
+}
+.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-title .item-icon {
+  margin-right: 0.5rem;
+}
+.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-title .item-title {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-sidebar {
+  flex-shrink: 0;
+}
+.sl-vue-tree .sl-vue-tree-drag-info {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 28px;
+}
+.sl-vue-tree.sl-vue-tree-root {
+  background-color: #ffffff;
+  color: #607D8B;
+  border: none;
+}
+.sl-vue-tree .sl-vue-tree-selected .sl-vue-tree-node-item {
+  background-color: #607D8B;
+  color: white;
+}
+.sl-vue-tree .sl-vue-tree-selected .sl-vue-tree-node-item:hover, .sl-vue-tree .sl-vue-tree-selected .sl-vue-tree-node-item.sl-vue-tree-cursor-hover {
+  color: white;
+  background-color: #99aeb8;
+}
+.sl-vue-tree .sl-vue-tree-node-item:hover, .sl-vue-tree .sl-vue-tree-node-item.sl-vue-tree-cursor-hover {
+  color: #607D8B;
+  background-color: #d5dee2;
+}
+.sl-vue-tree .sl-vue-tree-drag-info {
+  opacity: 0.5;
+  color: white;
+  background-color: #607D8B;
+}
+
+/*# sourceMappingURL=index.vue.map */
+
+/*# sourceMappingURL=NodeTitle.vue.map */
