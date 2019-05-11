@@ -1,6 +1,7 @@
 <template>
   <ul>
     <li v-for="(post, p) in posts" :key="post.id">
+      <FontAwesomeIcon icon="file" />
       {{ post.title }}
     </li>
   </ul>
