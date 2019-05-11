@@ -1,5 +1,5 @@
-@import '~@fortawesome/fontawesome-svg-core/styles.css';
-@import '~sl-vue-tree/dist/sl-vue-tree-dark.css';
+@import '@fortawesome/fontawesome-svg-core/styles.css';
+@import 'sl-vue-tree/dist/sl-vue-tree-dark.css';
 .sl-vue-tree.sl-vue-tree-root {
   flex-grow: 1;
   overflow-x: hidden;
