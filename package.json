@@ -20,18 +20,22 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "core-js": "^2.6.5",
+    "sl-vue-tree": "^1.8.4",
     "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
     "@vue/cli-service": "^3.7.0",
+    "axios": "^0.18.0",
+    "lodash": "^4.17.11",
     "node-sass": "^4.9.0",
     "rollup": "^1.11.3",
     "rollup-plugin-buble": "^0.19.6",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-vue": "^5.0.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "vuex": "^3.1.1"
   },
   "description": "## Project setup ``` yarn install ```",
   "repository": {

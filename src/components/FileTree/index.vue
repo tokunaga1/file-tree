@@ -1,8 +1,14 @@
 <template>
-  <FontAwesomeIcon icon="cat" />
+  <ul>
+    <li v-for="(post, p) in posts" :key="post.id">
+      {{ post.title }}
+    </li>
+  </ul>
 </template>
 
 <script>
+  import { mapState, mapGetters } from 'vuex'
+
   import { library, config } from '@fortawesome/fontawesome-svg-core'
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
   import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -12,6 +18,17 @@
 
   export default {
     components: { FontAwesomeIcon },
+    computed: {
+      ...mapState('posts', {
+        posts: 'list'
+      }),
+      ...mapGetters('posts', [
+        'json'
+      ]),
+    },
+    created () {
+      this.$store.dispatch('posts/get_list');
+    }
   }
 </script>
 
