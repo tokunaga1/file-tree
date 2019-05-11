@@ -16,5 +16,22 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
-  }
+  },
+  "description": "## Project setup ``` yarn install ```",
+  "main": "dist/FileTree.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tokunaga1/file-tree.git"
+  },
+  "keywords": [
+    "file",
+    "tree",
+    "view"
+  ],
+  "author": "tokuiti <tokuiti@gmail.com> (https://github.com/tokuiti)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tokunaga1/file-tree/issues"
+  },
+  "homepage": "https://github.com/tokunaga1/file-tree#readme"
 }
