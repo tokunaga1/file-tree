@@ -7,6 +7,12 @@ export default {
   output: {
     name: 'FileTree',
     exports: 'named',
+    globals: {
+      '@fortawesome/fontawesome-svg-core': 	'@fortawesome/fontawesome-svg-core',
+      '@fortawesome/vue-fontawesome': 			'@fortawesome/vue-fontawesome',
+      '@fortawesome/free-solid-svg-icons': 	'@fortawesome/free-solid-svg-icons',
+      //'sl-vue-tree': 'sl-vue-tree',
+    },
   },
   plugins: [
     vue({
@@ -15,5 +21,11 @@ export default {
     }),
     buble(),
     commonjs(),
+  ],
+  external: [
+    '@fortawesome/fontawesome-svg-core',
+    '@fortawesome/vue-fontawesome',
+    '@fortawesome/free-solid-svg-icons',
+    //'sl-vue-tree',
   ],
 };
