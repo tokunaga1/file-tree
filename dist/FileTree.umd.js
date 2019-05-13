@@ -183,7 +183,12 @@
   //
 
   fontawesomeSvgCore.config.autoAddCss = false;
-  fontawesomeSvgCore.library.add(freeSolidSvgIcons.fas);
+  fontawesomeSvgCore.library.add(
+    freeSolidSvgIcons.faFile,
+    freeSolidSvgIcons.faTimes,
+    freeSolidSvgIcons.faChevronRight,
+    freeSolidSvgIcons.faChevronDown
+  );
 
   var script$1 = {
     components: { SlVueTree: SlVueTree, NodeTitle: NodeTitle, FontAwesomeIcon: vueFontawesome.FontAwesomeIcon },
@@ -218,7 +223,7 @@
         var this$1 = this;
 
         e.stopPropagation();
-        var svt = this.$refs.slVueTree;
+
         var paths = [];
 
         if (! node.isLeaf && confirm('Delete folder(s) with nodes?')) {
@@ -228,7 +233,7 @@
         }
         paths.push(node.path);
 
-        svt.remove(paths);
+        this.$refs.slVueTree.remove(paths);
       },
 
       collect_paths: function collect_paths (node, paths) {
@@ -283,8 +288,6 @@
         var title = ref.title;
 
         node.title = title;
-        console.log('>> node', node);
-        console.log('>> nodes', this.nodes);
       },
 
       get_json: function get_json () {

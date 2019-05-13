@@ -39,10 +39,20 @@
 
   import { library, config } from '@fortawesome/fontawesome-svg-core'
   import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-  import { fas } from '@fortawesome/free-solid-svg-icons'
+  import {
+    faFile,
+    faTimes,
+    faChevronRight,
+    faChevronDown
+  } from '@fortawesome/free-solid-svg-icons'
 
-  config.autoAddCss = false
-  library.add(fas)
+  config.autoAddCss = false;
+  library.add(
+    faFile,
+    faTimes,
+    faChevronRight,
+    faChevronDown
+  );
 
   export default {
     components: { SlVueTree, NodeTitle, FontAwesomeIcon },
@@ -75,8 +85,8 @@
     methods: {
       remove (e, node) {
         e.stopPropagation();
-        const svt = this.$refs.slVueTree;
-        let paths = [];
+
+        const paths = [];
 
         if (! node.isLeaf && confirm('Delete folder(s) with nodes?')) {
           node.children.forEach(node => {
@@ -85,7 +95,7 @@
         }
         paths.push(node.path);
 
-        svt.remove(paths);
+        this.$refs.slVueTree.remove(paths);
       },
 
       collect_paths (node, paths) {
@@ -145,8 +155,6 @@
 </script>
 
 <style lang="scss">
-  //@import '~@fortawesome/fontawesome-svg-core/styles.css';
-
   @import '../../assets/styles/sl-vue-tree/dark.scss';
   @import '../../assets/styles/sl-vue-tree/custom.scss';
   @import '../../assets/styles/sl-vue-tree/light.scss';

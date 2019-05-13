@@ -1,7 +1,7 @@
 import SlVueTree from 'sl-vue-tree';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { faFile, faTimes, faChevronRight, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 //
 //
@@ -180,7 +180,12 @@ __vue_render__._withStripped = true;
 //
 
 config.autoAddCss = false;
-library.add(fas);
+library.add(
+  faFile,
+  faTimes,
+  faChevronRight,
+  faChevronDown
+);
 
 var script$1 = {
   components: { SlVueTree: SlVueTree, NodeTitle: NodeTitle, FontAwesomeIcon: FontAwesomeIcon },
@@ -215,7 +220,7 @@ var script$1 = {
       var this$1 = this;
 
       e.stopPropagation();
-      var svt = this.$refs.slVueTree;
+
       var paths = [];
 
       if (! node.isLeaf && confirm('Delete folder(s) with nodes?')) {
@@ -225,7 +230,7 @@ var script$1 = {
       }
       paths.push(node.path);
 
-      svt.remove(paths);
+      this.$refs.slVueTree.remove(paths);
     },
 
     collect_paths: function collect_paths (node, paths) {
@@ -280,8 +285,6 @@ var script$1 = {
       var title = ref.title;
 
       node.title = title;
-      console.log('>> node', node);
-      console.log('>> nodes', this.nodes);
     },
 
     get_json: function get_json () {
