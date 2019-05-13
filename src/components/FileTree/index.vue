@@ -155,7 +155,8 @@
 </script>
 
 <style lang="scss">
-  @import '../../assets/styles/sl-vue-tree/dark.scss';
+  //@import '../../assets/styles/sl-vue-tree/dark.scss';
+  @import 'sl-vue-tree/dist/sl-vue-tree-dark.css';
   @import '../../assets/styles/sl-vue-tree/custom.scss';
   @import '../../assets/styles/sl-vue-tree/light.scss';
 </style>
