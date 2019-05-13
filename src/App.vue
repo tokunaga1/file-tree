@@ -2,7 +2,7 @@
   <div id="app">
     <FileTree
       v-model="json"
-      ref="svt"
+      ref="tree"
     />
   </div>
 </template>
@@ -30,6 +30,8 @@
 </script>
 
 <style lang="scss">
+  @import '~@fortawesome/fontawesome-svg-core/styles.css';
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

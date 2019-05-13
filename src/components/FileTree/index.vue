@@ -135,8 +135,6 @@
 
       update ({ node, title }) {
         node.title = title;
-        console.log('>> node', node);
-        console.log('>> nodes', this.nodes);
       },
 
       get_json () {
@@ -147,9 +145,9 @@
 </script>
 
 <style lang="scss">
-  @import '@fortawesome/fontawesome-svg-core/styles.css';
-  @import 'sl-vue-tree/dist/sl-vue-tree-dark.css';
+  //@import '~@fortawesome/fontawesome-svg-core/styles.css';
 
-  @import '../../assets/styles/sl-vue-tree/main.scss';
+  @import '../../assets/styles/sl-vue-tree/dark.scss';
+  @import '../../assets/styles/sl-vue-tree/custom.scss';
   @import '../../assets/styles/sl-vue-tree/light.scss';
 </style>
