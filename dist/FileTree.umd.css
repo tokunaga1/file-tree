@@ -1,45 +1,29 @@
 @import 'sl-vue-tree/dist/sl-vue-tree-dark.css';
 .sl-vue-tree.sl-vue-tree-root {
-  flex-grow: 1;
-  overflow-x: hidden;
   overflow-y: auto;
-  height: 300px;
-  display: flex;
 }
-.sl-vue-tree.sl-vue-tree-root > .sl-vue-tree-nodes-list {
-  overflow-x: hidden;
-  overflow-y: auto;
-  flex-grow: 1;
+.sl-vue-tree.sl-vue-tree-root .sl-vue-tree-nodes-list {
+  overflow: unset;
 }
-.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-gap {
-  flex-shrink: 0;
+.sl-vue-tree .sl-vue-tree-drag-info {
+  color: white;
+  opacity: 0.4;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-title {
-  display: flex;
-  flex-grow: 1;
-  min-width: 0;
-}
-.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-title .sl-vue-tree-toggle + .item-icon {
-  margin-right: 0;
-}
-.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-title .item-icon {
-  margin-right: 0.5rem;
-}
-.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-title .item-title {
-  flex-grow: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-align: left;
 }
-.sl-vue-tree .sl-vue-tree-node-item .sl-vue-tree-sidebar {
-  flex-shrink: 0;
+.sl-vue-tree .sl-vue-tree-node-item.sl-vue-tree-node-is-folder .item-title.opened {
+  margin-left: -3px;
 }
-.sl-vue-tree .sl-vue-tree-drag-info {
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  line-height: 28px;
+.sl-vue-tree .sl-vue-tree-node-item.sl-vue-tree-node-is-folder .item-title.closed {
+  margin-left: -8px;
+}
+.sl-vue-tree .sl-vue-tree-gap {
+  min-width: 25px;
 }
 .sl-vue-tree.sl-vue-tree-root {
   background-color: #ffffff;

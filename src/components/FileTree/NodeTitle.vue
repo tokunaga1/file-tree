@@ -1,5 +1,10 @@
 <template>
-  <span class="item-title">
+  <span class="item-title"
+    :class="{
+      opened: node.isExpanded,
+      closed: !node.isExpanded,
+    }">
+
     <span v-if="node.isLeaf" class="file">
       {{ node.title }}
     </span>

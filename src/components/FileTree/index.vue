@@ -124,19 +124,23 @@
       append_folder () {
         const svt = this.$refs.slVueTree;
         const last_node = _.last(svt.getSelected()) || svt.getLastNode();
-        if (! last_node) {
-          return;
-        }
-
-        svt.setCursorPosition({
-          node: last_node,
-          placement: 'after',
-        });
-        svt.insert(svt.cursorPosition, {
-          title: 'New folder',
+        const folder = {
+          title: 'New Folder',
           isLeaf: false,
-        });
-        svt.setCursorPosition(null)
+        };
+
+        if (! last_node) {
+          this.nodes.push(folder);
+        }
+        else {
+          const new_pos = {
+            node: last_node,
+            placement: 'after',
+          };
+          svt.setCursorPosition(new_pos);
+          svt.insert(svt.cursorPosition, folder);
+          svt.setCursorPosition(null)
+        }
       },
 
       selected(nodes, e) {
@@ -155,7 +159,6 @@
 </script>
 
 <style lang="scss">
-  //@import '../../assets/styles/sl-vue-tree/dark.scss';
   @import 'sl-vue-tree/dist/sl-vue-tree-dark.css';
   @import '../../assets/styles/sl-vue-tree/custom.scss';
   @import '../../assets/styles/sl-vue-tree/light.scss';

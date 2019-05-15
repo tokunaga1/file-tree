@@ -15,6 +15,11 @@ import { faFile, faTimes, faChevronRight, faChevronDown } from '@fortawesome/fre
 //
 //
 //
+//
+//
+//
+//
+//
 
 var script = {
   props: {
@@ -135,19 +140,29 @@ var __vue_render__ = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
-  return _c("span", { staticClass: "item-title" }, [
-    _vm.node.isLeaf
-      ? _c("span", { staticClass: "file" }, [
-          _vm._v("\n    " + _vm._s(_vm.node.title) + "\n  ")
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    !_vm.node.isLeaf
-      ? _c("span", { staticClass: "folder", on: { dblclick: _vm.edit } }, [
-          _vm._v("\n    " + _vm._s(_vm.title) + "\n  ")
-        ])
-      : _vm._e()
-  ])
+  return _c(
+    "span",
+    {
+      staticClass: "item-title",
+      class: {
+        opened: _vm.node.isExpanded,
+        closed: !_vm.node.isExpanded
+      }
+    },
+    [
+      _vm.node.isLeaf
+        ? _c("span", { staticClass: "file" }, [
+            _vm._v("\n    " + _vm._s(_vm.node.title) + "\n  ")
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      !_vm.node.isLeaf
+        ? _c("span", { staticClass: "folder", on: { dblclick: _vm.edit } }, [
+            _vm._v("\n    " + _vm._s(_vm.title) + "\n  ")
+          ])
+        : _vm._e()
+    ]
+  )
 };
 var __vue_staticRenderFns__ = [];
 __vue_render__._withStripped = true;
@@ -155,7 +170,7 @@ __vue_render__._withStripped = true;
   /* style */
   var __vue_inject_styles__ = undefined;
   /* scoped */
-  var __vue_scope_id__ = "data-v-2b062ecf";
+  var __vue_scope_id__ = "data-v-3a46303c";
   /* module identifier */
   var __vue_module_identifier__ = undefined;
   /* functional template */
@@ -261,19 +276,23 @@ var script$1 = {
     append_folder: function append_folder () {
       var svt = this.$refs.slVueTree;
       var last_node = _.last(svt.getSelected()) || svt.getLastNode();
-      if (! last_node) {
-        return;
-      }
-
-      svt.setCursorPosition({
-        node: last_node,
-        placement: 'after',
-      });
-      svt.insert(svt.cursorPosition, {
-        title: 'New folder',
+      var folder = {
+        title: 'New Folder',
         isLeaf: false,
-      });
-      svt.setCursorPosition(null);
+      };
+
+      if (! last_node) {
+        this.nodes.push(folder);
+      }
+      else {
+        var new_pos = {
+          node: last_node,
+          placement: 'after',
+        };
+        svt.setCursorPosition(new_pos);
+        svt.insert(svt.cursorPosition, folder);
+        svt.setCursorPosition(null);
+      }
     },
 
     selected: function selected(nodes, e) {
