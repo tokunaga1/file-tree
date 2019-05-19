@@ -3,8 +3,8 @@
     v-model="nodes"
     ref="slVueTree"
     :allow-multiselect="true"
-    @select="selected"
-  >
+    @select="selected">
+
     <template v-slot:title="{ node }">
       <span class="item-icon">
         <FontAwesomeIcon v-if="node.isLeaf" icon="file" />
@@ -58,8 +58,8 @@
     components: { SlVueTree, NodeTitle, FontAwesomeIcon },
     props: {
       value: {
-        type: String,
-        default: '[]',
+        type: Array,
+        default: [],
       },
     },
     data: () => ({
@@ -69,9 +69,15 @@
     watch: {
       value: {
         immediate: true,
-        handler (json) {
-          if (json) {
-            this.nodes = JSON.parse(json);
+        handler (value) {
+          if (value) {
+            this.nodes = value.map(item => {
+              return {
+                id: item.id,
+                title: item.title || item.name,
+                isLeaf: _.has(item, 'isLeaf')? item.isLeaf: true,
+              }
+            });
           }
         }
       }

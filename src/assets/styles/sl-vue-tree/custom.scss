@@ -1,10 +1,6 @@
 .sl-vue-tree {
   &.sl-vue-tree-root {
     overflow-y: auto;
-
-    .sl-vue-tree-nodes-list {
-      overflow: unset;
-    }
   }
 
   .sl-vue-tree-drag-info {
