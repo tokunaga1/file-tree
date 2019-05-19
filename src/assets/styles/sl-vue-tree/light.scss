@@ -7,7 +7,7 @@ $blue-gray-light50: lighten($blue-gray, 50%);
 
 .sl-vue-tree {
   &.sl-vue-tree-root {
-    background-color: #ffffff;
+    background-color: transparent;
     color: $blue-gray;
     border: none;
   }

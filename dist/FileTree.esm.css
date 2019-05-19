@@ -23,7 +23,7 @@
   min-width: 25px;
 }
 .sl-vue-tree.sl-vue-tree-root {
-  background-color: #ffffff;
+  background-color: transparent;
   color: #607D8B;
   border: none;
 }
