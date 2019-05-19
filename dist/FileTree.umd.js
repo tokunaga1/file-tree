@@ -173,7 +173,7 @@
     /* style */
     var __vue_inject_styles__ = undefined;
     /* scoped */
-    var __vue_scope_id__ = "data-v-3a46303c";
+    var __vue_scope_id__ = "data-v-3c7f0ce0";
     /* module identifier */
     var __vue_module_identifier__ = undefined;
     /* functional template */
@@ -209,8 +209,8 @@
     components: { SlVueTree: SlVueTree, NodeTitle: NodeTitle, FontAwesomeIcon: vueFontawesome.FontAwesomeIcon },
     props: {
       value: {
-        type: String,
-        default: '[]',
+        type: Array,
+        default: [],
       },
     },
     data: function () { return ({
@@ -220,9 +220,15 @@
     watch: {
       value: {
         immediate: true,
-        handler: function handler (json) {
-          if (json) {
-            this.nodes = JSON.parse(json);
+        handler: function handler (value) {
+          if (value) {
+            this.nodes = value.map(function (item) {
+              return {
+                id: item.id,
+                title: item.title || item.name,
+                isLeaf: _.has(item, 'isLeaf')? item.isLeaf: true,
+              }
+            });
           }
         }
       }

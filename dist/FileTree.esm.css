@@ -2,9 +2,6 @@
 .sl-vue-tree.sl-vue-tree-root {
   overflow-y: auto;
 }
-.sl-vue-tree.sl-vue-tree-root .sl-vue-tree-nodes-list {
-  overflow: unset;
-}
 .sl-vue-tree .sl-vue-tree-drag-info {
   color: white;
   opacity: 0.4;
